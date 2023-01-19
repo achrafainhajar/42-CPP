@@ -47,7 +47,10 @@ class HumanB{
     }
     void attack()
     {
-        std::cout<<name<< " attacks with their "<< weapon->getType()<<std::endl;
+        if(weapon)
+            std::cout<<name<< " attacks with their "<< weapon->getType()<<std::endl;
+        else
+            std::cout<<name<< " attacks with their "<< "rjlo" <<std::endl;
     }
 };
 int main()

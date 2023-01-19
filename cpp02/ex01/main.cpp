@@ -46,17 +46,17 @@ class Fixed{
     }
     float toFloat( void ) const
     {
-        return((float)value / (1  << bits));
+        return((float)value / (float)(1  << bits));
     }
     int toInt( void ) const
     {
         return(value >> bits);
     }
-        friend std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+};
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
             os << obj.toFloat();
             return os;
         }
-};
 int main( void ) {
 Fixed a;
 Fixed const b( 10 );
@@ -64,7 +64,6 @@ Fixed const c( 42.42f );
 Fixed const d( b );
 
 a = Fixed( 1234.4321f );
-
 std::cout << "a is " << a << std::endl;
 std::cout << "b is " << b << std::endl;
 std::cout << "c is " << c << std::endl;

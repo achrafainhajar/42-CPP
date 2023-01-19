@@ -14,7 +14,7 @@ class Fixed{
     }
     Fixed(const float value)
     {
-        this->value = value * (1 << bits);
+        this->value = roundf((float)value * (1 << bits));
     }
     Fixed(const Fixed &ref)
     {
@@ -79,7 +79,7 @@ class Fixed{
     }
     float toFloat( void ) const
     {
-        return((float)value / (1  << bits));
+        return(value / (1  << bits));
     }
     Fixed operator++()
     {
