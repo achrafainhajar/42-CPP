@@ -1,58 +1,18 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/23 09:45:32 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/23 09:45:33 by aainhaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class Weapon{
-    std::string type;
-    public:
-    Weapon(void)
-    {
-
-    }
-    Weapon(std::string type)
-    {
-        this->type = type;
-    }
-    const std::string &getType(void)
-    {
-        std::string &ref = type;
-        return(ref);
-    }
-    void setType(std::string str)
-    {
-        this->type = str;
-    }
-};
-class HumanA{
-    std::string name;
-    Weapon &weapon;
-    public:
-    HumanA(std::string str,Weapon &club) : weapon(club) , name(str)
-    {
-    }
-    void attack()
-    {
-        std::cout<<name<< " attacks with their "<< weapon.getType()<<std::endl;
-    }
-};
-class HumanB{
-    std::string name;
-    Weapon *weapon;
-    public:
-    HumanB(std::string str)
-    {
-        name = str;
-    }
-    void setWeapon(Weapon &weapon)
-    {
-        this->weapon= &weapon;
-    }
-    void attack()
-    {
-        if(weapon)
-            std::cout<<name<< " attacks with their "<< weapon->getType()<<std::endl;
-        else
-            std::cout<<name<< " attacks with their "<< "rjlo" <<std::endl;
-    }
-};
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 int main()
 {
     {

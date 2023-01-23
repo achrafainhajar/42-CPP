@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 09:45:13 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 09:45:14 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/23 09:45:36 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/23 09:45:37 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-#include "Harl.hpp"
-int main()
-{
-    Harl haha;
-    haha.complain("DEBUG");
-    haha.complain("WARNING");
-    haha.complain("INFO");
-    haha.complain("ERROR");
-}
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
+
+#include "Weapon.hpp"
+class HumanB{
+    std::string name;
+    Weapon *weapon;
+    public:
+    HumanB(std::string str)
+    {
+        name = str;
+    }
+    void setWeapon(Weapon &weapon);
+    void attack();
+};
+#endif

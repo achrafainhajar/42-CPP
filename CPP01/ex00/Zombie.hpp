@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 09:45:13 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 09:45:14 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/23 09:17:02 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/23 09:17:03 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-#include "Harl.hpp"
-int main()
+#ifndef ZOMBIE.HPP
+#define ZOMBIE.HPP
+
+#include <iostream>
+class Zombie
 {
-    Harl haha;
-    haha.complain("DEBUG");
-    haha.complain("WARNING");
-    haha.complain("INFO");
-    haha.complain("ERROR");
-}
+    std::string name;
+    public:
+    Zombie(){}
+    Zombie(std::string namee)
+    {
+        this->name = namee;
+    }
+    void set(std::string s);
+    void announce( void );
+    Zombie* newZombie( std::string name );
+    void randomChump( std::string name );
+};
+#endif

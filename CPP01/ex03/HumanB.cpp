@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 09:45:13 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 09:45:14 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/23 09:45:40 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/23 09:45:41 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-#include "Harl.hpp"
-int main()
-{
-    Harl haha;
-    haha.complain("DEBUG");
-    haha.complain("WARNING");
-    haha.complain("INFO");
-    haha.complain("ERROR");
-}
+#include"HumanB.hpp"
+
+
+    void HumanB::setWeapon(Weapon &weapon)
+    {
+        this->weapon= &weapon;
+    }
+    void HumanB::attack()
+    {
+        if(weapon)
+            std::cout<<name<< " attacks with their "<< weapon->getType()<<std::endl;
+        else
+            std::cout<<name<< " attacks with their "<< "rjlo" <<std::endl;
+    }

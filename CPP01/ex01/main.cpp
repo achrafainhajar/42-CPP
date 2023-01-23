@@ -1,47 +1,16 @@
-#include<iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/23 09:22:07 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/23 09:44:21 by aainhaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class Zombie
-{
-    std::string name;
-    public:
-    void set(std::string s)
-    {
-        name = s;
-    }
-    ~Zombie()
-    {
-        std::cout << this->name << " has been destroyed" << std::endl;
-    }
-    std::string get_name() {return this->name;}
-    void set_name(std::string namee) {this->name = namee;}
-    void announce( void )
-    {
-        std::cout<<name<<": BraiiiiiiinnnzzzZ..."<<std::endl;
-    }
-    Zombie* newZombie( std::string name )
-    {
-        Zombie *p;
-        p = new Zombie;
-        p->name = name;
-        return(p);
-    }
-    Zombie* zombieHorde( int N, std::string name )
-    {
-        Zombie *p;
-        p = new Zombie[N];
-        int i = 0;
-        while(i < N)
-        {
-            p[i].name = name;
-            i++;
-        }
-        return(p);
-    }
-    void randomChump( std::string name )
-    {
-        
-    }
-};
+#include"Zombie.hpp"
 int main()
 {  
     Zombie *p;

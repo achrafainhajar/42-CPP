@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 09:45:13 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 09:45:14 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/23 09:45:44 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/23 09:45:45 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-#include "Harl.hpp"
-int main()
-{
-    Harl haha;
-    haha.complain("DEBUG");
-    haha.complain("WARNING");
-    haha.complain("INFO");
-    haha.complain("ERROR");
-}
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
+
+#include "Weapon.hpp"
+
+class HumanA{
+    std::string name;
+    Weapon &weapon;
+    public:
+    HumanA(std::string str,Weapon &club) : name(str), weapon(club) 
+    {
+    }
+    void attack();
+};
+#endif

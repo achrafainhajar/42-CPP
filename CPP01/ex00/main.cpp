@@ -1,35 +1,17 @@
-#include<iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/23 09:16:52 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/23 09:16:54 by aainhaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class Zombie
-{
-    std::string name;
-    public:
-    Zombie(){}
-    Zombie(std::string namee)
-    {
-        this->name = namee;
-    }
-    void set(std::string s)
-    {
-        name = s;
-    }
-    void announce( void )
-    {
-        std::cout<<name<<": BraiiiiiiinnnzzzZ..."<<std::endl;
-    }
-    Zombie* newZombie( std::string name )
-    {
-        Zombie *p;
-        p = new Zombie;
-        p->name = name;
-        return(p);
-    }
-    void randomChump( std::string name )
-    {
-        Zombie p(name);
-        p.announce();
-    }
-};
+#include "Zombie.hpp"
+
 int main()
 {
     Zombie haha;
