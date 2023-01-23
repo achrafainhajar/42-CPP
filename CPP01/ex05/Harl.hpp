@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:45:10 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 09:45:11 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/24 00:18:57 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,8 @@ class Harl{
     void warning(void);
     void error(void);
     public:
-    Harl()
-    {
-        tab[0] = &Harl::debug;
-        tab[1] = &Harl::info; 
-        tab[2] = &Harl::warning; 
-        tab[3] = &Harl::error; 
-    }
-    void (Harl::*tab[4])();
+    Harl();
     void complain( std::string level);
+    ~Harl();
 };
 #endif

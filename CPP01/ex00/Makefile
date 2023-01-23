@@ -1,4 +1,4 @@
-SRC = Zombie.cpp main.cpp
+SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 OBJ = $(SRC:.cpp=.o)

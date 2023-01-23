@@ -6,11 +6,24 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:22:10 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 09:22:11 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/24 00:02:17 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+    std::cout <<"Default Constructor Called"<< std::endl;
+}
+Zombie::Zombie(std::string name)
+{
+    this->name = name;
+}
+Zombie::~Zombie()
+{
+    std::cout << "Destructor Called" << std::endl;
+}
 void Zombie::set(std::string s)
 {
     name = s;
@@ -21,26 +34,16 @@ void Zombie::announce( void )
 {
     std::cout<<name<<": BraiiiiiiinnnzzzZ..."<<std::endl;
 }
-Zombie* Zombie::newZombie( std::string name )
+
+void randomChump(std::string name)
+{
+    Zombie p(name);
+    p.announce();
+}
+
+Zombie* newZombie( std::string name )
 {
     Zombie *p;
-    p = new Zombie;
-    p->name = name;
+    p = new Zombie(name);
     return(p);
-}
-Zombie* Zombie::zombieHorde( int N, std::string name )
-{
-    Zombie *p;
-    p = new Zombie[N];
-    int i = 0;
-    while(i < N)
-    {
-        p[i].name = name;
-        i++;
-    }
-    return(p);
-}
-void Zombie::randomChump( std::string name )
-{
-    
 }

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 09:16:52 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 23:51:18 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/23 23:38:09 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/23 23:43:07 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include"Zombie.hpp"
 
-int main()
+Zombie* newZombie( std::string name )
 {
-    Zombie *haha1;
-    haha1 = newZombie("sss");
-    haha1->announce();
-    delete haha1;
-    randomChump("f");
+    Zombie *p;
+    p = new Zombie(name);
+    return(p);
 }

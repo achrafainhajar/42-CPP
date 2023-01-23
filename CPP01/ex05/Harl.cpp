@@ -6,11 +6,19 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:45:06 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 09:45:07 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/24 00:18:31 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Harl.hpp"
+Harl::Harl()
+{
+    std::cout << "Default Constructor Called" << std::endl;
+}
+Harl::~Harl()
+{
+    std::cout << "Destructor Called" << std::endl;
+}
 void Harl::debug(void)
 {
     std::cout<<"I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"<< std::endl;
@@ -29,6 +37,7 @@ void Harl::error(void)
 }
 void Harl::complain( std::string level)
 {
+    void (Harl::*tab[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     int i = 0;
     std::string str[4] = {"DEBUG","INFO","WARNING","ERROR"};
     while(i < 4)
