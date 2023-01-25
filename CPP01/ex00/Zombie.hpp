@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:17:02 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 23:44:53 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/24 00:27:08 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ class Zombie
     std::string name;
     public:
     Zombie();
-    Zombie(std::string namee)
-    {
-        this->name = namee;
-    }
+    Zombie(std::string namee);
     void set(std::string s);
     void announce( void );
     ~Zombie();

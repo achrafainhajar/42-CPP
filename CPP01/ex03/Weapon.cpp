@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:45:28 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/24 00:14:39 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/24 04:40:36 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Weapon::Weapon()
 }
 Weapon::~Weapon()
 {
-    std::cout<<"Destructor Called"<<std::endl;
+    std::cout<<"Weapon Destructor Called"<<std::endl;
 }
-const std::string Weapon::getType(void)
+const  std::string & Weapon::getType(void)
 {
     std::string &ref = type;
     return(ref);

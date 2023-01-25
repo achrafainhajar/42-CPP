@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:45:40 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/24 00:13:45 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/24 00:42:34 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void HumanB::attack()
 }
 HumanB::~HumanB()
 {
-    std::cout << "Destructor Called" << std::endl;
+    std::cout << "HumanB Destructor Called" << std::endl;
 }

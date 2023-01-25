@@ -6,12 +6,16 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:16:57 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 23:47:55 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/24 00:28:08 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+Zombie::Zombie(std::string namee)
+{
+    this->name = namee;
+}
 Zombie::Zombie(){
     std::cout << "Default Constructor Called"<< std::endl;
 }
@@ -25,5 +29,5 @@ void Zombie::announce( void )
 }
 Zombie::~Zombie()
 {
-    std::cout << "Destructor Called" << std::endl;
+    std::cout << this->name << " has been destroyed" << std::endl;
 }

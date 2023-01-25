@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:22:10 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/24 00:02:17 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/24 04:27:31 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 Zombie::Zombie()
 {
-    std::cout <<"Default Constructor Called"<< std::endl;
+    //std::cout <<"Default Constructor Called"<< std::endl;
 }
 Zombie::Zombie(std::string name)
 {
     this->name = name;
 }
+
 Zombie::~Zombie()
 {
-    std::cout << "Destructor Called" << std::endl;
-}
-void Zombie::set(std::string s)
-{
-    name = s;
+    std::cout << this->name << " has been destroyed" << std::endl;
 }
 std::string Zombie::get_name() {return this->name;}
 void Zombie::set_name(std::string namee) {this->name = namee;}

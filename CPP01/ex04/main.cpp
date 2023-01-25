@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:45:20 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/23 23:29:20 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/25 02:28:39 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void replace(std::string line,char **argv)
     {
         line.erase(pos, av1.length());
         line.insert(pos, av2);
-        pos2 = pos + av1.length();
+        pos2 = pos + av2.length();
     }
     std::ofstream file;
     file.open(filename + ".replace");
@@ -39,9 +39,15 @@ int main(int argc,char **argv)
     {
         std::ifstream file(argv[1]);
         if (file.is_open()) {
+            //real_line.assign(std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>());
             while (getline(file, line))
             {
-                real_line = real_line + line + "\n";
+                real_line = real_line + line + '\n';
+            }
+            if(real_line[0] == '\0')
+            {
+                std::cout << "empty file" << std::endl;
+                exit(1);
             }
             replace(real_line,argv);
         }
