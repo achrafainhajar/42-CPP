@@ -1,58 +1,17 @@
-#include <iostream>
-#include <cmath>
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 06:42:19 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/25 06:46:00 by aainhaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class Fixed{
-    int value;
-    static const int bits = 8;
-    public:
-    Fixed()
-    {
-        std::cout<<"Default constructor called"<< std::endl;
-        value = 0;
-    }
-    Fixed(const int value)
-    {
-        std::cout<<"Int constructor called"<< std::endl;
-        this->value = value << bits;
-    }
-    Fixed(const float value)
-    {
-        std::cout<<"Float constructor called"<< std::endl;
-        this->value = value * (1 << bits);
-    }
-    Fixed(const Fixed &ref)
-    {
-        std::cout<<"Copy constructor called"<< std::endl;
-        value = ref.getRawBits();
-    }
-    ~Fixed()
-    {
-        std::cout<<"Destructor called"<< std::endl;
-    }
-    Fixed& operator=(const Fixed &ref)
-    {
-        std::cout<<"Copy assignment operator called"<< std::endl;
-        value = ref.getRawBits();
-        return *this;
-    }
-    int getRawBits() const
-    {
-        return(value);
-    }
-    void  setRawBits(int const raw)
-    {
-        this->value = raw;
-    }
-    float toFloat( void ) const
-    {
-        return((float)value / (float)(1  << bits));
-    }
-    int toInt( void ) const
-    {
-        return(value >> bits);
-    }
-};
+#include"Fixed.hpp"
+
 std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
             os << obj.toFloat();
             return os;
