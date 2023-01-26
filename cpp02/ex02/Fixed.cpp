@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 06:49:51 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/25 07:21:25 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/26 01:47:23 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,4 +140,9 @@ const Fixed & Fixed::max(const Fixed &a,const Fixed &b)
     if(a.getRawBits() < b.getRawBits())
         return(b);
     return(a);
+}
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) 
+{
+        os << obj.toFloat();
+        return os;
 }

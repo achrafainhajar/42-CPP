@@ -6,16 +6,12 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 06:42:19 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/25 06:46:00 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/25 11:46:43 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Fixed.hpp"
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
-            os << obj.toFloat();
-            return os;
-        }
 int main( void ) {
 Fixed a;
 Fixed const b( 10 );

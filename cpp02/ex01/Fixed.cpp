@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 06:42:32 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/25 07:20:41 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/26 02:10:05 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed(const float value)
 Fixed::Fixed(const Fixed &ref)
 {
     std::cout<<"Copy constructor called"<< std::endl;
-    value = ref.getRawBits();
+    *this = ref;
 }
 Fixed::~Fixed()
 {
@@ -45,7 +45,20 @@ int Fixed::getRawBits() const
 {
     return(value);
 }
+float Fixed::toFloat( void ) const
+{
+    return((float)value / (float)(1  << bits));
+}
+int Fixed::toInt( void ) const
+{
+    return(value >> bits);
+}
 void  Fixed::setRawBits(int const raw)
 {
     this->value = raw;
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+            os << obj.toFloat();
+            return os;
 }

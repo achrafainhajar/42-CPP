@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 06:47:44 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/25 07:14:09 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/26 01:47:20 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ class Fixed{
      static const Fixed & max(const Fixed &a,const Fixed &b);
     int toInt( void ) const;
 };
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 #endif

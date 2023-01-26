@@ -1,4 +1,4 @@
-CC = c++ -Wall -Wextra -Werror -std=c++98 -o Fixed 
+CC = c++ -Wall -Wextra -Werror -std=c++98
 
 SRC =  main.cpp Fixed.cpp
 
@@ -7,7 +7,7 @@ NAME = Fixed
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CC) $(SRC)
+	$(CC) $(SRC) -o $(NAME)
 
 clean:
 	rm -f $(NAME) 
