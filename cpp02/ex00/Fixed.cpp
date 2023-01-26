@@ -6,12 +6,12 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 06:37:47 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/25 06:40:42 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/26 02:17:30 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include"Fixed.hpp"
+
 Fixed::Fixed()
 {
     std::cout<<"Default constructor called"<< std::endl;
