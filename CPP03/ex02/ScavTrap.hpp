@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 10:34:46 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 10:34:47 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/28 10:29:20 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/28 11:31:34 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
-#include"FragTrap.hpp"
-#include"ScavTrap.hpp"
-int main(void)
-{
-    FragTrap frag("ch3ayba");
-    frag.attack("achraf");
-    frag.takeDamage(10);
-    frag.takeDamage(80);
-    frag.beRepaired(100);
-    frag.takeDamage(100);
-    frag.attack("achraf");
-    frag.highFivesGuys();
-    return (0);
-}
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include "ClapTrap.hpp"
+class ScavTrap : public ClapTrap{
+    public:
+    ScavTrap(std::string name);
+    ~ScavTrap();
+    ScavTrap& operator=(ScavTrap const &ref);
+    ScavTrap(ScavTrap const & ref);
+    void guardGate();
+    void attack(const std::string& target);
+};
+#endif
