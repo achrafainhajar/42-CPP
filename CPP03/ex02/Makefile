@@ -2,7 +2,7 @@ CC = c++ -Wall -Wextra -Werror -std=c++98
 
 SRC =  main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
 
-NAME = ClapTrap
+NAME = FragTrap
 
 all: $(NAME)
 

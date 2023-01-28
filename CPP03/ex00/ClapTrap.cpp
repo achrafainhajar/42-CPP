@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:16:54 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:24:23 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/28 11:47:19 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap(){}
 ClapTrap& ClapTrap::operator=(ClapTrap const &ref)
 {
-    std::cout<<"Copy assignment operator called"<< std::endl;
+    std::cout<<"ClapTrap Copy assignment operator called"<< std::endl;
     name = ref.name;
     Hit_point = ref.Hit_point;
     Energy_point = ref.Energy_point;
@@ -24,12 +24,12 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &ref)
 }
 ClapTrap::ClapTrap(ClapTrap const & ref)
 {
-    std::cout << "Copy Constructor Called"<<std::endl;
+    std::cout << "ClapTrap Copy Constructor Called"<<std::endl;
     *this = ref;
 }
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout<<"Default Assigment Constructor Called"<< std::endl;
+    std::cout<<"ClapTrap Default Assigment Constructor Called"<< std::endl;
     this->name = name;
     Hit_point = 10;
     Energy_point = 10;
@@ -68,5 +68,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor Called"<< std::endl;
+    std::cout << "ClapTrap Destructor Called"<< std::endl;
 }
