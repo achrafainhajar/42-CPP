@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 17:03:23 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 17:19:01 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/29 17:03:50 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/29 17:43:33 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Animal.hpp"
 #include"Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
-#include"WrongAnimal.hpp"
-int main()
+
+Dog::Dog()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const WrongAnimal* i = new WrongCat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-return 0;
+    type = "Dog";
+}
+
+void Dog::makeSound() const
+{
+    std::cout<<"Woof Woof" << std::endl;
+}
+Dog::~Dog()
+{
+
 }

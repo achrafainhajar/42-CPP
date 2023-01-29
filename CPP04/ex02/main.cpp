@@ -1,66 +1,19 @@
-#include<iostream>
-class Brain{
-    std::string ideas[100];
-};
-#include<iostream>
-class Animal{
-    protected:
-    std::string type;
-    public:
-    Animal()
-    {
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/29 17:57:58 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/29 17:58:22 by aainhaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    };
-    virtual std::string getType() const = 0;
-    virtual void makeSound()const = 0;
-};
-class Dog : public Animal{
-    private:
-    Brain *brain;
-    public:
-    Dog()
-    {
-        brain = new Brain;
-       type = "Dog";
-    }
-    std::string getType() const
-    {
-        return(type);
-    }
-    void makeSound() const
-    {
-        std::cout<<"Woof Woof" << std::endl;
-    }
-    ~Dog()
-    {
-        std::cout << "Dog destruction called" <<std::endl;
-        delete brain;
-    }
-};
-class Cat : public Animal{
-    private:
-    Brain *brain;
-    public:
-    Cat()
-    {
-        brain = new Brain;
-        type = "Cat";
-    }
-    std::string getType() const
-    {
-        return(type);
-    }
-    void makeSound() const 
-    {
-        std::cout<<"meow meow" << std::endl;
-    }
-    ~Cat()
-    {
-        std::cout << "Cat destruction called" <<std::endl;
-        delete brain;
-    }
-};
-
+#include"Cat.hpp"
+#include"Dog.hpp"
+#include"Animal.hpp"
+#include"Brain.hpp"
 int main()
 {
 const Animal *j = new Dog();

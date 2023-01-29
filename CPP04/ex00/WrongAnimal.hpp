@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 17:54:26 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 17:54:58 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/29 17:12:32 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/29 17:32:05 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Cat.hpp"
-#include"Dog.hpp"
-#include"Animal.hpp"
-#include"Brain.hpp"
-int main()
-{
-    Animal *lol[10];
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-    int i= 0;
-    while(i < 5)
-    {
-        lol[i] = new Dog;
-        i++;
-    }
-    while(i < 10)
-    {
-        lol[i] = new Cat;
-        i++;
-    }
-    i = 0;
-    
-    while(i < 10)
-    {
-        delete lol[i];
-        i++;
-    }
-}
+#include<iostream>
+
+class WrongAnimal{
+    protected:
+    std::string type;
+    public:
+    WrongAnimal();
+    void makeSound()const;
+    std::string getType() const;
+};
+
+#endif

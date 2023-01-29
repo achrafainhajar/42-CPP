@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 17:03:23 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 17:19:01 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/01/29 17:08:07 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/01/29 17:54:23 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Animal.hpp"
-#include"Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
-#include"WrongAnimal.hpp"
-int main()
+#include"Cat.hpp"
+
+Cat::Cat()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const WrongAnimal* i = new WrongCat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-return 0;
+    brain = new Brain;
+    type = "Cat";
+}
+void Cat::makeSound() const 
+{
+    std::cout<<"meow meow" << std::endl;
+}
+Cat::~Cat()
+{
+    std::cout << "Cat destruction called" <<std::endl;
+    delete brain;
 }
