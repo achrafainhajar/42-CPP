@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:13:02 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 17:31:47 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/30 09:35:15 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,17 @@ void WrongAnimal::makeSound()const
 std::string WrongAnimal::getType() const
 {
     return(type);
+}
+WrongAnimal::WrongAnimal(const WrongAnimal &a)
+{
+    this->type = a.type;
+}
+WrongAnimal & WrongAnimal::operator=(const WrongAnimal &other)
+{
+    type = other.type;
+    return(*this);
+}
+WrongAnimal::~WrongAnimal()
+{
+    
 }

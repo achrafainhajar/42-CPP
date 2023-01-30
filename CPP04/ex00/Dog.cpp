@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:03:50 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 17:43:33 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/30 09:27:37 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,13 @@ void Dog::makeSound() const
 Dog::~Dog()
 {
 
+}
+Dog::Dog(const Dog &a)
+{
+    this->type = a.type;
+}
+Dog & Dog::operator=(const Dog &other)
+{
+    type = other.type;
+    return(*this);
 }

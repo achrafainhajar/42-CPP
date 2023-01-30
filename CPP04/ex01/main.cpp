@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:54:26 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 17:54:58 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/30 10:26:15 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,20 @@
 int main()
 {
     Animal *lol[10];
-
     int i= 0;
-    while(i < 5)
+    while(i < 2)
     {
         lol[i] = new Dog;
         i++;
     }
-    while(i < 10)
+    while(i < 4)
     {
         lol[i] = new Cat;
         i++;
     }
     i = 0;
     
-    while(i < 10)
+    while(i < 4)
     {
         delete lol[i];
         i++;
