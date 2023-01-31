@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:54:26 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/30 10:42:30 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:39:03 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include"Brain.hpp"
 int main()
 {
-    Animal *lol[10];
+    Animal *lol[4];
     int i= 0;
     while(i < 2)
     {
@@ -29,7 +29,12 @@ int main()
         i++;
     }
     i = 0;
-    
+    while(i < 4)
+    {
+        lol[i]->makeSound();
+        i++;
+    }
+    i = 0;
     while(i < 4)
     {
         delete lol[i];

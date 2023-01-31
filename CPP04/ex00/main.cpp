@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:03:23 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/30 09:37:45 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:37:19 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,9 @@ i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
 s->makeSound();
+delete i;
+delete j;
+delete s;
+delete meta;
 return 0;
 }

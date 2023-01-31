@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:39:06 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/30 10:17:27 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:13:06 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 Animal::Animal()
 {
+    type = "Animal"; 
     std::cout << "Animal Default Constructor Called" <<std::endl;
 }
 void Animal::makeSound()const
-{}
+{
+    std::cout<< "Animal Sound"<< std::endl;
+}
 Animal::~Animal()
 {
     std::cout << "Animal Destructor Called" <<std::endl;

@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:58:28 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/30 09:33:09 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/30 13:26:06 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ class Animal{
     Animal(const Animal &a);
     virtual void makeSound()const;
     std::string getType() const;
-    ~Animal();
+    virtual ~Animal();
 };
 #endif
