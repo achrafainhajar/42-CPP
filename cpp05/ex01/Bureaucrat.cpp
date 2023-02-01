@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 07:53:01 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 17:18:04 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/01 09:17:45 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,25 @@
 Bureaucrat::Bureaucrat(){
     std::cout<< "Default Constructor Called" << std::endl;
 }
+Bureaucrat::Bureaucrat(const Bureaucrat &a):name(a.name)
+{
+    grade = a.grade;   
+}
+Bureaucrat  & Bureaucrat::operator=(const Bureaucrat &a)
+{
+    this->grade = a.grade;
+    return(*this);
+}
+Bureaucrat::~Bureaucrat()
+{
+    
+}
 Bureaucrat::Bureaucrat(std::string name,int grade): name(name){
     this->grade = grade;
     if(grade > 150)
-        throw Form::GradeTooLowException(grade);
+        throw Form::GradeTooLowException();
     if(grade < 1)
-        throw Form::GradeTooHighException(grade);
+        throw Form::GradeTooHighException();
 }
 std::string Bureaucrat::get_Name() const
 {
@@ -33,13 +46,13 @@ void Bureaucrat::increment()
 {
     this->grade--;
     if(grade < 1)
-        throw Form::GradeTooHighException(grade);
+        throw Form::GradeTooHighException();
 }
 void Bureaucrat::decrement()
 {
     this->grade++;
     if(grade > 150)
-        throw Form::GradeTooLowException(grade);
+        throw Form::GradeTooLowException();
 }
 void Bureaucrat::signForm(Form a)
 {

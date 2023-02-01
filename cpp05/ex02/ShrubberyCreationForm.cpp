@@ -6,15 +6,35 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 09:20:11 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 17:48:08 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/01 09:50:06 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ShrubberyCreationForm.hpp"
-#include "beref.hpp"
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target):target(target),Form("ShrubberyCreationForm",145,137)
+#include "Bureaucrat.hpp"
+
+ShrubberyCreationForm::ShrubberyCreationForm()
+{
+    Form("ShrubberyCreationForm",145,137);
+}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &a)
+{
+    Form(a.get_Name(),a.get_Grade(),a.get_exec());
+    target = a.target;
+}
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &a)
+{
+    Form(a.get_Name(),a.get_Grade(),a.get_exec());
+    target = a.target;
+    return (*this);
+}
+ShrubberyCreationForm::~ShrubberyCreationForm()
 {
     
+}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target):Form("ShrubberyCreationForm",145,137)
+{
+    this->target = target;
 }
 void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
@@ -24,7 +44,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)
     }
     if(executor.get_Grade() > get_exec())
     {
-        throw GradeTooLowException(get_Grade());
+        throw GradeTooLowException();
     }
     std::ofstream file;
     file.open(target + "_shrubbery");

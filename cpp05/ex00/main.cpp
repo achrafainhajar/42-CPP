@@ -1,67 +1,17 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/01 08:34:28 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/01 08:35:35 by aainhaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class GradeTooHighException {
-   int grade;
-public:
-GradeTooHighException(){}
-    GradeTooHighException(int grd) : grade(grd){}
-    std::string what() {
-        std::string message = "Your Grade " + std::to_string(grade) + " is too High";
-        return message;
-    }
-};
-class GradeTooLowException {
-    int grade;
-public:
-GradeTooLowException(){}
-    GradeTooLowException(int grd) : grade(grd){}
-    std::string what() const{
-        std::string message = "Your Grade " + std::to_string(grade) + " is too Low";
-        return message;
-    }
-};
+#include"Bureaucrat.hpp"
 
-class Bureaucrat{
-    const std::string name;
-     int grade;
-    public:
-    Bureaucrat(){
-        std::cout<< "Default Constructor Called" << std::endl;
-    }
-    Bureaucrat(int grade,std::string name): name(name){
-        this->grade = grade;
-        if(grade > 150)
-            throw GradeTooLowException(grade);
-        if(grade < 1)
-            throw GradeTooHighException(grade);
-    }
-    std::string get_Name() const
-    {
-        return(this->name);
-    }
-
-    int get_Grade() const 
-    {
-        return(this->grade);
-    }
-
-    void increment()
-    {
-        this->grade--;
-        if(grade < 1)
-            throw GradeTooHighException(grade);
-    }
-    void decrement()
-    {
-        this->grade++;
-        if(grade > 150)
-            throw GradeTooLowException(grade);
-    }
-};
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& a) {
-        out << a.get_Name() << ", bureaucrat grade " << a.get_Grade() << std::endl;
-        return out;
-    }
 int main()
 {
     try{
@@ -75,11 +25,7 @@ int main()
     std::cout << a;
     a.increment();
     }
-    catch(GradeTooHighException &e)
-    {
-        std::cout<<e.what()<<std::endl;
-    }
-    catch(GradeTooLowException &e)
+    catch(std::exception &e)
     {
         std::cout<<e.what()<<std::endl;
     }

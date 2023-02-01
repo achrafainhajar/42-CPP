@@ -15,11 +15,15 @@
 
 #include <iostream>
 #include "Form.hpp"
-#include"beref.hpp"
+#include"Bureaucrat.hpp"
 
 class PresidentialPardonForm : public Form{
     std::string target;
     public:
+    PresidentialPardonForm();
+    PresidentialPardonForm(const PresidentialPardonForm &a);
+    PresidentialPardonForm  & operator=(const PresidentialPardonForm &a);
+    ~PresidentialPardonForm();
     PresidentialPardonForm(std::string target);
     void execute(Bureaucrat const & executor);
     class SignedException {

@@ -6,26 +6,49 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 09:55:36 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 18:01:39 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/01 09:50:14 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
-RobotomyRequestForm::RobotomyRequestForm(std::string target):target(target),Form("RobotomyRequestForm",72,45)
-{}
+RobotomyRequestForm::RobotomyRequestForm()
+{
+    Form("RobotomyRequestForm",72,45);
+}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &a)
+{
+    Form(a.get_Name(),a.get_Grade(),a.get_exec());
+    target = a.target;
+}
+RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &a)
+{
+    Form(a.get_Name(),a.get_Grade(),a.get_exec());
+    target = a.target;
+    return (*this);
+}
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+    
+}
+RobotomyRequestForm::RobotomyRequestForm(std::string target):Form("RobotomyRequestForm",72,45)
+{
+    this->target = target;
+}
 void RobotomyRequestForm::execute(Bureaucrat const & executor)
 {
     if(get_signed() == false)
     {
-        throw SignedException(get_Grade());
+        throw SignedException();
     }
     if(executor.get_Grade() > get_exec())
     {
-        throw GradeTooLowException(get_Grade());
+        throw GradeTooLowException();
     }
     srand(time(0)); // set the seed 
-    int i = rand() % 10 + 1;
+    int i = rand() % 10;
     if(i % 2)
-        std::cout <<target<<" has been robotomized successfully 50% of the time"<< std::endl;
+        std::cout <<target<<" has been robotomized successfully"<< std::endl;
+        else
+        std::cout <<target<<" has been robotomized Failed"<< std::endl;
 }

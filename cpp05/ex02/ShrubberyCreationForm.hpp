@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 09:20:14 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 17:47:35 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/01 09:51:47 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ class ShrubberyCreationForm:public Form
 {
     std::string target;
     public:
+    ShrubberyCreationForm();
+    ShrubberyCreationForm(const ShrubberyCreationForm &a);
+    ShrubberyCreationForm  & operator=(const ShrubberyCreationForm &a);
+    ~ShrubberyCreationForm();
     ShrubberyCreationForm(std::string target);
       class SignedException {
     int grade;

@@ -6,12 +6,12 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 13:30:33 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 18:02:58 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/01 08:55:56 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Form.hpp"
-#include"beref.hpp"
+#include"Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include"ShrubberyCreationForm.hpp"

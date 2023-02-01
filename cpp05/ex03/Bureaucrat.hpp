@@ -1,5 +1,5 @@
-#ifndef BEREF_HPP
-#define BEREF_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include<iostream>
 
@@ -10,8 +10,10 @@ class Bureaucrat{
     public:
     Bureaucrat();
     Bureaucrat(std::string name,int grade);
+    Bureaucrat(const Bureaucrat &a);
+    Bureaucrat  & operator=(const Bureaucrat &a);
+    ~Bureaucrat();
     std::string get_Name() const;
-
     int get_Grade() const ;
     void increment();
     void decrement();

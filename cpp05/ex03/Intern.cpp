@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:48:30 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/31 16:14:11 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/31 16:28:55 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ std::string name[3] = { "presidential pardon","shrubbery creation","robotomy req
     {
         if(s1 == name[i])
             break;
+        i++;
     }
     switch(i)
     {
