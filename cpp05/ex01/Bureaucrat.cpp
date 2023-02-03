@@ -6,15 +6,15 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 07:53:01 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/03 11:41:22 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 15:20:39 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():name("")
 {
-    
+    this->grade = 150;
 }
 
 Bureaucrat::Bureaucrat(int grade,const std::string name):name(name)
@@ -82,8 +82,12 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& a) {
     
 void Bureaucrat::signForm(Form a)
 {
-    if(a.get_signed() == true)
+    try{
+        a.beSigned(*this);
         std::cout<<name<<" signed " << a.get_Name()<<std::endl;
-    else
+    }
+    catch(std::exception &e)
+    {
         std::cout<<name<<" couldn’t sign " << a.get_Name()<<" because maybe the grade "<< grade << " is Lower than "<< a.get_exec()<<std::endl;
+    }
 }

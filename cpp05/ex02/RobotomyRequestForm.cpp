@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 09:55:36 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/03 11:50:57 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:48:18 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <cstdlib>
 RobotomyRequestForm::RobotomyRequestForm():Form("RobotomyRequestForm",72,45)
 {
+    target = "";
 }
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &a):Form(a.get_Name(),a.get_Grade(),a.get_exec())
 {

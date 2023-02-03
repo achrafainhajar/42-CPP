@@ -14,7 +14,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm():Form("PresidentialPardonForm",25,5)
 {
-    
+    target = "";
 }
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &a):Form(a.get_Name(),a.get_Grade(),a.get_exec())
 {

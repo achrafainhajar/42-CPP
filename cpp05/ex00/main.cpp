@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 08:34:28 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/01 08:35:35 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:54:31 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int main()
 {
     try{
-    Bureaucrat a(1,"af3a");
-    Bureaucrat b(150,"zab3a");
-    std::cout <<b;
-    b.increment();
-    std::cout <<b;
-    b.decrement();
-    std::cout <<b;
-    std::cout << a;
-    a.increment();
+        Bureaucrat a(1,"af3a");
+        Bureaucrat b(150,"zab3a");
+        std::cout <<b;
+        b.increment();
+        std::cout <<b;
+        b.decrement();
+        std::cout <<b;
+        std::cout << a;
+        a.increment();
     }
     catch(std::exception &e)
     {

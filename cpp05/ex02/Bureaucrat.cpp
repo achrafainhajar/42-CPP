@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 07:53:01 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/03 11:57:16 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 15:32:57 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,13 @@ void Bureaucrat::signForm(const Form &a)
     else
         std::cout<<name<<" couldn’t sign " << a.get_Name()<<" because maybe the grade "<< grade << " is Lower than "<< a.get_exec()<<std::endl;
 }
-void Bureaucrat::executeForm(Form const & form)
+void Bureaucrat::executeForm(Form  & form)
 {
-    if(form.get_signed() == true)
+    try{
+        form.execute(*this);
         std::cout<<name<< " executed " << form.get_Name()<< std::endl;
-    else
+    }
+    catch(std::exception &e){
         std::cout<<name<< " does not execute " << form.get_Name()<< std::endl;
+    }
 }

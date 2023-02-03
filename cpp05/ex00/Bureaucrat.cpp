@@ -6,15 +6,15 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 08:18:36 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/03 11:13:20 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:52:56 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():name("")
 {
-    
+    this->grade = 150;
 }
 
 Bureaucrat::Bureaucrat(int grade,const std::string name):name(name)

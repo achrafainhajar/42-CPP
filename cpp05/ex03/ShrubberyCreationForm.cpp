@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 09:20:11 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/03 11:51:25 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:48:22 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm():Form("ShrubberyCreationForm",145,137)
 {
-
+    target = "";
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &a):Form(a.get_Name(),a.get_Grade(),a.get_exec())
 {

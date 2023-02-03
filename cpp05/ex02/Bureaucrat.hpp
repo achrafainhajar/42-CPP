@@ -28,7 +28,7 @@ class Bureaucrat{
         const char* what() const throw();
     };
     void signForm(const Form &a);
-    void executeForm(Form const & form);
+    void executeForm(Form  & form);
 };
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& a);
 #endif

@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 13:30:33 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/03 11:57:55 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:16:32 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int main()
 {
    try 
    {
-        Bureaucrat B(1,"aristo");
-        ShrubberyCreationForm S("ASCII tree");
-        RobotomyRequestForm R("Robot");
-        PresidentialPardonForm P("Document");
+        Bureaucrat B(1,"ttttt");
+        ShrubberyCreationForm S("shru");
+        RobotomyRequestForm R("robot");
+        PresidentialPardonForm P("presdient");
         S.beSigned(B);
         B.executeForm(S);
         R.beSigned(B);
@@ -30,7 +30,7 @@ int main()
         B.executeForm(R);
         P.beSigned(B);
         P.execute(B);
-        S.execute(B);
+        //S.execute(B);
         B.executeForm(P);
     }
     catch(std::exception &e)

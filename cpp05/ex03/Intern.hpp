@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:47:43 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/01 10:08:44 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:29:53 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Intern
     ~Intern();
     Intern(Intern const & src);
     Intern  & operator=(Intern const & src);
-    Form *makeform(std::string s1,std::string s2);
+    Form *makeForm(std::string s1,std::string s2);
 };
-
 #endif

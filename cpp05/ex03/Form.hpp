@@ -14,7 +14,7 @@ class Form{
     Form(std::string name,int grade,int grade_exec);
     Form(const Form &a);
     Form  & operator=(const Form &a);
-    ~Form();
+    virtual ~Form();
     std::string get_Name() const;
     void beSigned(Bureaucrat a);
      int get_exec() const;
