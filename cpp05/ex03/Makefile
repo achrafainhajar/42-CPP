@@ -1,6 +1,6 @@
 CC = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC =  main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp Intern.cpp
+SRC =  main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 
 NAME = main
 

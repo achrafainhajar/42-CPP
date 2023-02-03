@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 08:18:36 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/01 09:15:01 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:13:20 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat()
 {
-    std::cout<< "Default Constructor Called" << std::endl;
+    
 }
 
 Bureaucrat::Bureaucrat(int grade,const std::string name):name(name)

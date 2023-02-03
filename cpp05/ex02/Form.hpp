@@ -11,25 +11,26 @@ class Form{
 
     public :
     Form();
+    Form(std::string name,int grade,int grade_exec);
     Form(const Form &a);
     Form  & operator=(const Form &a);
     ~Form();
-    Form(std::string name,int grade,int grade_exec);
     std::string get_Name() const;
     void beSigned(Bureaucrat a);
-    int get_exec() const;
+     int get_exec() const;
     bool get_signed() const;
     int get_Grade() const ;
-    class GradeTooHighException:public std::exception{
+    class GradeTooHighException: public std::exception{
     public:
     GradeTooHighException();
            const char* what() const throw();
-    };
+        };
     class GradeTooLowException:public std::exception{
     public:
         GradeTooLowException();
         const char* what() const throw();
     };
+    virtual void execute(Bureaucrat const & executor) = 0;
 };
 std::ostream& operator<<(std::ostream& out, const Form& a);
 #endif

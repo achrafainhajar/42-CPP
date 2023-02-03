@@ -1,14 +1,14 @@
 #include"Form.hpp"
-#include"beref.hpp"
+#include"Bureaucrat.hpp"
 int main()
 {
     try{
-    Bureaucrat a("af3a",5);
+    Bureaucrat a(5,"af3a");
     Form b("lolo",5,3);
     std::cout <<b;
     std::cout << a;
-    b.beSigned(a);
     a.signForm(b);
+    b.beSigned(a);
     }
     catch(std::exception &e)
     {

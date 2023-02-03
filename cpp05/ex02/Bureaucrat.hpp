@@ -9,15 +9,25 @@ class Bureaucrat{
     int grade;
     public:
     Bureaucrat();
-    Bureaucrat(std::string name,int grade);
+    Bureaucrat(int grade,const std::string name);
     Bureaucrat(const Bureaucrat &a);
     Bureaucrat  & operator=(const Bureaucrat &a);
     ~Bureaucrat();
     std::string get_Name() const;
-    int get_Grade() const ;
+    int get_Grade() const;
     void increment();
     void decrement();
-    void signForm(Form a);
+    class GradeTooHighException:public std::exception{
+    public:
+    GradeTooHighException();
+           const char* what() const throw();
+    };
+    class GradeTooLowException:public std::exception{
+    public:
+        GradeTooLowException();
+        const char* what() const throw();
+    };
+    void signForm(const Form &a);
     void executeForm(Form const & form);
 };
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& a);

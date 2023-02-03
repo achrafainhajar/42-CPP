@@ -26,16 +26,5 @@ class PresidentialPardonForm : public Form{
     ~PresidentialPardonForm();
     PresidentialPardonForm(std::string target);
     void execute(Bureaucrat const & executor);
-    class SignedException {
-    int grade;
-    public:
-        SignedException(){}
-        SignedException(int grd) : grade(grd){}
-        const char *what() const throw()
-        {
-            std::string message = "The Form is not signed because " + std::to_string(grade) + " is too Low";
-            return (message.c_str());
-        }
-    };
 };
 #endif

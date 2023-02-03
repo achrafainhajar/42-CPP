@@ -5,16 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 08:18:53 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/03 11:06:50 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/03 10:45:54 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/03 11:33:53 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <iostream>
+#include<iostream>
 
+#include "Form.hpp"
 class Bureaucrat{
     const std::string name;
     int grade;
@@ -38,6 +39,7 @@ class Bureaucrat{
         GradeTooLowException();
         const char* what() const throw();
     };
+    void signForm(Form a);
 };
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& a);
 #endif

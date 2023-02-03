@@ -6,24 +6,21 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 09:55:36 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/01 09:50:14 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:50:57 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
-RobotomyRequestForm::RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm():Form("RobotomyRequestForm",72,45)
 {
-    Form("RobotomyRequestForm",72,45);
 }
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &a)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &a):Form(a.get_Name(),a.get_Grade(),a.get_exec())
 {
-    Form(a.get_Name(),a.get_Grade(),a.get_exec());
     target = a.target;
 }
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &a)
 {
-    Form(a.get_Name(),a.get_Grade(),a.get_exec());
     target = a.target;
     return (*this);
 }
@@ -39,7 +36,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor)
 {
     if(get_signed() == false)
     {
-        throw SignedException();
+        throw GradeTooLowException();
     }
     if(executor.get_Grade() > get_exec())
     {

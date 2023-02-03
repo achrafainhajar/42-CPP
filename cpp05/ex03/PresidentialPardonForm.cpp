@@ -12,18 +12,16 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm():Form("PresidentialPardonForm",25,5)
 {
-    Form("PresidentialPardonForm",25,5);
+    
 }
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &a)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &a):Form(a.get_Name(),a.get_Grade(),a.get_exec())
 {
-    Form(a.get_Name(),a.get_Grade(),a.get_exec());
     target = a.target;
 }
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &a)
 {
-    Form(a.get_Name(),a.get_Grade(),a.get_exec());
     target = a.target;
     return (*this);
 }
@@ -40,7 +38,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor)
 {
     if(get_signed() == false)
     {
-        throw SignedException(get_Grade());
+        throw GradeTooLowException();
     }
     if(executor.get_Grade() > get_exec())
     {

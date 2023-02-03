@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 13:30:33 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/01 08:55:56 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:57:55 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 {
    try 
    {
-        Bureaucrat B("aristo",1);
+        Bureaucrat B(1,"aristo");
         ShrubberyCreationForm S("ASCII tree");
         RobotomyRequestForm R("Robot");
         PresidentialPardonForm P("Document");

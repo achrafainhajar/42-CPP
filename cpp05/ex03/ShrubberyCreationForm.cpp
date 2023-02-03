@@ -6,25 +6,23 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 09:20:11 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/01 09:50:06 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:51:25 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm():Form("ShrubberyCreationForm",145,137)
 {
-    Form("ShrubberyCreationForm",145,137);
+
 }
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &a)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &a):Form(a.get_Name(),a.get_Grade(),a.get_exec())
 {
-    Form(a.get_Name(),a.get_Grade(),a.get_exec());
     target = a.target;
 }
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &a)
 {
-    Form(a.get_Name(),a.get_Grade(),a.get_exec());
     target = a.target;
     return (*this);
 }
@@ -40,7 +38,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
     if(get_signed() == false)
     {
-        throw SignedException(get_Grade());
+        throw GradeTooLowException();
     }
     if(executor.get_Grade() > get_exec())
     {
