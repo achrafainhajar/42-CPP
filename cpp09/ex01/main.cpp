@@ -22,12 +22,14 @@ void check_args(std::string argv) {
 
 double calculate(const std::string& expression) {
     std::stack<double> stack;
-    std::stringstream ss(expression);
     std::string op;
-
-    while (ss >> op)
+    op = expression;
+    int i = 0;
+    while (op[i])
     {
-        if (op == "+" || op == "-" || op == "*" || op == "/") {
+        if(op[i] == ' ')
+            continue;
+        if (op[i] == '+' || op[i] == '-' || op[i] == '*' || op[i] == '/') {
             if (stack.size() < 2)
                 throw std::runtime_error("Error");
             double second_nb = stack.top(); 
@@ -35,20 +37,25 @@ double calculate(const std::string& expression) {
             double first_nb = stack.top();
             stack.pop();
 
-            if (op == "+")
+            if (op[i] == '+')
                 stack.push(first_nb + second_nb);
-            else if (op == "-")
+            else if (op[i] == '-')
                 stack.push(first_nb - second_nb);
-            else if (op == "*")
+            else if (op[i] == '*')
                 stack.push(first_nb * second_nb);
             else {
                 if (second_nb == 0)
-                    throw std::runtime_error("Error");
+                    throw std::runtime_error("Error division par 0");
                 stack.push(first_nb / second_nb);
             }
         }
+        else if(std::isdigit(op[i]))
+        {
+            stack.push(op[i] - '0');
+        }
         else
-            stack.push(std::atoi(op.c_str()));
+            throw std::runtime_error("Error");
+        i++;
     }
 
     if (stack.size() != 1)

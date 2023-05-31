@@ -38,8 +38,8 @@ int parsing(const std::string date, float value)
     int y = std::atoi(year.c_str());
     int m = std::atoi(month.c_str());
     int d = std::atoi(day.c_str());
-    if(y == 2009 && m == 1 && d < 2 || (y == 2022) && ((m == 3 && d > 29) || m > 3)||
-        y < 2009 || y > 2022)
+    if((y == 2009 && m == 1 && d < 2)||
+       ( y < 2009))
     {
         std::cerr << "no data available on this date" << std::endl;
         return(-1);
@@ -61,7 +61,7 @@ int parsing(const std::string date, float value)
 		}
 		else
 		{
-            if (d > 29)
+            if (d > 28)
             {
 			    std::cerr << "bad date" << std::endl;
                 return(-1);
@@ -97,19 +97,26 @@ void processInputFile(const std::string& filename) {
     }
 
     std::string line;
+
+    std::getline(file, line);
     while (std::getline(file, line)) {
+        std::string::size_type pos = line.find(',');
+        if (pos != std::string::npos)
+            line.replace(pos, 1, ".", 1);
         std::istringstream iss(line);
         std::string date_str;
+        char sep;
         float value;
-
-        if (std::getline(iss, date_str, '|')) {
-            iss >> value;
+        iss >> date_str;
+        iss >> sep;
+        iss >> value;
+        if (!iss.fail() && !(iss >> date_str)) {
             if(parsing(date_str, value) < 0)
                 continue;
             std::map<std::string, float>::iterator it = btc.find(date_str);
 
             if (it == btc.end()) {
-                it = btc.upper_bound(date_str);
+                it = btc.lower_bound(date_str);
                 --it;
             }
 
