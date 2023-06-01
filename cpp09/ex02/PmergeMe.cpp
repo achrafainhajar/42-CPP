@@ -1,11 +1,14 @@
 #include "PmergeMe.hpp"
-PmergeMe::PmergeMe() {
+PmergeMe::PmergeMe()
+{
 }
-PmergeMe::PmergeMe(const PmergeMe& other) : vec(other.vec), lis(other.lis) {
+PmergeMe::PmergeMe(const PmergeMe& other) : vec(other.vec), lis(other.lis)
+{
 }
 PmergeMe::~PmergeMe() {
 }
-PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
+PmergeMe& PmergeMe::operator=(const PmergeMe& other)
+{
     if (this != &other) {
         vec = other.vec;
         lis = other.lis;
@@ -86,7 +89,7 @@ void PmergeMe::check_arg(const char* str1)
             exit(1);
         }
     }
-    if(std::atoi(str1) <= 0) {
+    if(std::atoi(str1) < 0) {
         std::cout << "Error\n";
         exit(1);
     }

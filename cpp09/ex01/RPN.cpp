@@ -6,15 +6,18 @@ int is_operator(char c)
         return 0;
     return 1;
 }
-void check_args(std::string argv) {
-    for(std::size_t i = 0; i < argv.size(); i++) {
+void check_args(std::string argv)
+{
+    for(std::size_t i = 0; i < argv.size(); i++)
+    {
         if(!std::isdigit(argv[i]) && !std::isspace(argv[i]) && !is_operator(argv[i])) {
             throw std::runtime_error("Error");
         }
     }
 }
 
-double calculate(const std::string& expression) {
+double calculate(const std::string& expression)
+{
     std::stack<double> stack;
     std::string op;
     op = expression;

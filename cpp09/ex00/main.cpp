@@ -11,7 +11,7 @@ std::map<std::string, float> readData(const std::string& filename)
         exit(1);
     }
 
-    std::string line;
+   std::string line;
    getline(file,line);
    while(getline(file, line))
  	{

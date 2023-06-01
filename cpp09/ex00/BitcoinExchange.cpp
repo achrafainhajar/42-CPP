@@ -117,7 +117,8 @@ int check_first(std::string line)
 		return 1;
 	return 0;
 }
-void BitcoinExchange::processInputFile(const std::string& filename) {
+void BitcoinExchange::processInputFile(const std::string& filename)
+{
     std::ifstream file(filename.c_str());
 
     if (!file) {
