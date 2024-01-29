@@ -5,29 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:47 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:48 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/04 11:25:30 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/08 03:47:13 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
-#include"ScavTrap.hpp"
+#include"iter.hpp"
+template<typename T>
+void funct(T const &arr)
+{
+    std::cout <<arr<< std::endl;
+}
+
 int main()
 {
-    ScavTrap s1("achraf");
-    s1.guardGate();
-    ClapTrap s2("ch3ayba");
-    s1.attack(s2.getter());
-    s2.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s1.beRepaired(100);
+    std::string s[3] = {"ana","huwa","homa"};
+    iter(s,3,funct);
+    return 0;
 }

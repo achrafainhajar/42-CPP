@@ -2,7 +2,7 @@ SRC = main.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 OBJ = $(SRC:.cpp=.o)
-NAME = Brain
+NAME = main
 all : $(NAME)
 $(NAME) : $(OBJ)
 %.o: %.cpp

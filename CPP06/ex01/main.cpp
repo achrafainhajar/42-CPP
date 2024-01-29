@@ -5,29 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:47 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:48 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/02 10:17:00 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/06 01:35:47 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
-#include"ScavTrap.hpp"
+#include<iostream>
+#include"Data.hpp"
+
+uintptr_t serialize(Data* ptr)
+{
+    return reinterpret_cast<uintptr_t>(ptr);
+}
+Data* deserialize(uintptr_t raw)
+{
+    return reinterpret_cast<Data *>(raw);
+}
+
 int main()
 {
-    ScavTrap s1("achraf");
-    s1.guardGate();
-    ClapTrap s2("ch3ayba");
-    s1.attack(s2.getter());
-    s2.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s1.beRepaired(100);
+    Data ptr;
+    ptr.data = 4;
+    Data *haha = deserialize(serialize(&ptr));
+    std::cout<<haha->data<<std::endl;
 }

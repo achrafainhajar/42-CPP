@@ -6,13 +6,36 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:16:54 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:47:19 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:47:01 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ClapTrap.hpp"
 
-ClapTrap::ClapTrap(){}
+ClapTrap::ClapTrap()
+{
+    std::cout<<"ClapTrap Default Constructor Called"<< std::endl;
+    this->name = "name";
+    Hit_point = 10;
+    Energy_point = 10;
+    Attack_damage = 0;
+}
+
+ClapTrap::ClapTrap(std::string name)
+{
+    std::cout<<"ClapTrap Default Assigment Constructor Called"<< std::endl;
+    this->name = name;
+    Hit_point = 10;
+    Energy_point = 10;
+    Attack_damage = 0;
+}
+
+ClapTrap::ClapTrap(ClapTrap const & ref)
+{
+    std::cout << "ClapTrap Copy Constructor Called"<<std::endl;
+    *this = ref;
+}
+
 ClapTrap& ClapTrap::operator=(ClapTrap const &ref)
 {
     std::cout<<"ClapTrap Copy assignment operator called"<< std::endl;
@@ -21,19 +44,6 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &ref)
     Energy_point = ref.Energy_point;
     Attack_damage = ref.Attack_damage;
     return *this;
-}
-ClapTrap::ClapTrap(ClapTrap const & ref)
-{
-    std::cout << "ClapTrap Copy Constructor Called"<<std::endl;
-    *this = ref;
-}
-ClapTrap::ClapTrap(std::string name)
-{
-    std::cout<<"ClapTrap Default Assigment Constructor Called"<< std::endl;
-    this->name = name;
-    Hit_point = 10;
-    Energy_point = 10;
-    Attack_damage = 0;
 }
 void ClapTrap::attack(const std::string& target)
 {
@@ -62,7 +72,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap "<<name<<" is Dead"<< std::endl;
         return;
     }
-    Hit_point = amount;
+    Hit_point = amount + Hit_point;
     std::cout << "ClapTrap " <<name << "reparing him self" << std::endl;
     Energy_point--;
 }

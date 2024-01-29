@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:03:50 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/31 12:23:47 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:17:59 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ Dog::~Dog()
 Dog::Dog(const Dog &a)
 {
     std::cout << "Dog Copy Constructor Called" <<std::endl;
-    if(brain)
-        delete brain;
     this->type = a.type;
     brain = new Brain(*a.brain);
 }

@@ -5,29 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:47 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:48 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/06 22:08:15 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/13 01:14:34 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
-#include"ScavTrap.hpp"
+#include "easyfind.hpp"
 int main()
 {
-    ScavTrap s1("achraf");
-    s1.guardGate();
-    ClapTrap s2("ch3ayba");
-    s1.attack(s2.getter());
-    s2.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s1.beRepaired(100);
+    std::vector<int> vec;
+    vec.push_back(10);
+    vec.push_back(30);
+    vec.push_back(11);
+    vec.push_back(12);
+    try{
+       easyfind(vec,30);
+       easyfind(vec,31);
+    }
+    catch(std::exception &e)
+        {
+        std::cout <<"mal9ahch"<< std::endl;
+    }
+    return(0);
 }

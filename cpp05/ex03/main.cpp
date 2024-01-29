@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 13:30:33 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/02/03 17:19:14 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:25:50 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int main()
         rrf->beSigned(B);
         //if u change it check for null;
         rrf->execute(B);
-        while(1);
         delete rrf;
     }
     catch(std::exception &e)

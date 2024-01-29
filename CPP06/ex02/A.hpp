@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:19 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:24 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/03 12:48:04 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/03 12:52:06 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#ifndef A_HPP
+#define A_HPP
 
-int main()
-{
-    ClapTrap s1("achraf");
-    s1.attack("ch3ayba");
-    s1.takeDamage(10);
-    s1.attack("ch3ayba");
-}
+#include"Base.hpp"
+class A :public Base{
+    
+};
+#endif

@@ -6,12 +6,20 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:24:57 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:26:35 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:48:39 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ScavTrap.hpp"
 
+ScavTrap::ScavTrap()
+{
+    std::cout<<"ScavpTrap Default Constructor Called"<< std::endl;
+    this->name = "name";
+    Hit_point = 100;
+    Energy_point = 50;
+    Attack_damage = 20;
+}
 ScavTrap& ScavTrap::operator=(ScavTrap const &ref)
 {
     std::cout<<"ScavTrap Copy assignment operator called"<< std::endl;
@@ -26,9 +34,10 @@ ScavTrap::ScavTrap(ScavTrap const & ref)
     std::cout << "ScavTrap Copy Constructor Called"<<std::endl;
     *this = ref;
 }
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+ScavTrap::ScavTrap(std::string name)
 {
     std::cout<<"ScavTrap Default Assigment Constructor Called"<< std::endl;
+    this->name = name;
     Hit_point = 100;
     Energy_point = 50;
     Attack_damage = 20;
@@ -51,3 +60,4 @@ void ScavTrap::attack(const std::string& target)
     Energy_point--;
     std::cout << "ScavTrap " <<name << " attacks "<< target<< " causing "<< Attack_damage <<" points of damage!" << std::endl;
 }
+

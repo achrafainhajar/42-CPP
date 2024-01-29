@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:19 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:24 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/13 00:42:55 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/13 01:00:21 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
-int main()
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+class Span
 {
-    ClapTrap s1("achraf");
-    s1.attack("ch3ayba");
-    s1.takeDamage(10);
-    s1.attack("ch3ayba");
-}
+    std::vector<int> arr;
+    unsigned int N;
+    public:
+    Span();
+    Span(unsigned int N);
+    int shortestSpan();
+    int longestSpan();
+    void addNumber(int n);
+    template<typename T>
+    void addNumbers(T a)
+    {
+        arr.insert(arr.end(), a.begin(), a.end());
+    }
+};
+#endif

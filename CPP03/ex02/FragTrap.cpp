@@ -6,15 +6,25 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:33:29 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:28:59 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:50:23 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name): ClapTrap(name)
+FragTrap::FragTrap()
+{
+    std::cout<<"FragTrap Default Constructor Called"<< std::endl;
+   this->name = "";
+    Hit_point = 100;
+    Energy_point = 100;
+    Attack_damage = 30;
+}
+
+FragTrap::FragTrap(std::string name)
 {
     std::cout<<"FragTrap Default Assigment Constructor Called"<< std::endl;
+   this->name = name;
     Hit_point = 100;
     Energy_point = 100;
     Attack_damage = 30;

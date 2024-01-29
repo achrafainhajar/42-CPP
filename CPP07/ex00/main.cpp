@@ -5,29 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:47 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:48 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/04 11:15:26 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/06 23:38:35 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
-#include"ScavTrap.hpp"
-int main()
+#include "whatever.hpp"
+
+int main( void ) 
 {
-    ScavTrap s1("achraf");
-    s1.guardGate();
-    ClapTrap s2("ch3ayba");
-    s1.attack(s2.getter());
-    s2.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s2.attack(s1.getter());
-    s1.takeDamage(20);
-    s1.beRepaired(100);
+    int a = 2;
+    int b = 3;
+    ::swap( a, b );
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+    return 0;
 }

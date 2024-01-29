@@ -6,15 +6,24 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:31:09 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:31:20 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:49:37 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ScavTrap.hpp"
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+ScavTrap::ScavTrap()
+{
+    std::cout<<"ScavpTrap Default Constructor Called"<< std::endl;
+    this->name = "name";
+    Hit_point = 100;
+    Energy_point = 50;
+    Attack_damage = 20;
+}
+ScavTrap::ScavTrap(std::string name)
 {
     std::cout<<"ScavTrap Default Assigment Constructor Called"<< std::endl;
     Hit_point = 100;
+    this->name = name;
     Energy_point = 50;
     Attack_damage = 20;
 }

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:19 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:24 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/06 23:42:10 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/08 03:46:29 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#ifndef ITER_HPP
+#define ITER_HPP
 
-int main()
+#include <iostream>
+
+template<typename T>
+void iter(const T *a,int size,void (*funct)(const T &))
 {
-    ClapTrap s1("achraf");
-    s1.attack("ch3ayba");
-    s1.takeDamage(10);
-    s1.attack("ch3ayba");
+     for (int i = 0; i < size; i++) {
+        funct(a[i]);
+    }
 }
+#endif

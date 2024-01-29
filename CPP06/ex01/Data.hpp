@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:19 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:24 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/06 01:04:17 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/06 01:04:50 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#ifndef DATA_HPP
+#define DATA_HPP
 
-int main()
+#include <iostream>
+
+struct Data
 {
-    ClapTrap s1("achraf");
-    s1.attack("ch3ayba");
-    s1.takeDamage(10);
-    s1.attack("ch3ayba");
-}
+      int data;
+};
+
+
+#endif

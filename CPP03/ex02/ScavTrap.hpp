@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:29:20 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:31:34 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:49:57 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "ClapTrap.hpp"
 class ScavTrap : public ClapTrap{
     public:
+    ScavTrap();
     ScavTrap(std::string name);
     ~ScavTrap();
     ScavTrap& operator=(ScavTrap const &ref);

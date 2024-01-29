@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:08:07 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/31 12:24:16 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:12:08 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ Cat::~Cat()
 Cat::Cat(const Cat &a)
 {
     std::cout << "Cat Copy Constructor Called" <<std::endl;
-    if(brain)
-        delete brain;
     this->type = a.type;
     brain = new Brain(*a.brain);
 }

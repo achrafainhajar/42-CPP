@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 07:06:19 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/29 07:06:24 by aainhaja         ###   ########.fr       */
+/*   Created: 2023/02/13 01:01:22 by aainhaja          #+#    #+#             */
+/*   Updated: 2023/02/13 01:02:04 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
-int main()
+#include<iostream>
+#include <vector>
+#include <algorithm>
+
+template<typename T>
+
+void easyfind(T a,int k)
 {
-    ClapTrap s1("achraf");
-    s1.attack("ch3ayba");
-    s1.takeDamage(10);
-    s1.attack("ch3ayba");
+    if(std::find(a.begin(), a.end(), k) == a.end())
+    {
+        throw std::runtime_error("Value not found");
+    }
+    std::cout <<"l9ah"<< std::endl;
 }
+
+#endif

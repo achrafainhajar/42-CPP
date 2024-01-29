@@ -6,7 +6,7 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:32:16 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:32:47 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:49:23 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class FragTrap : public ClapTrap{
     public:
+    FragTrap();
     FragTrap(std::string name);
     ~FragTrap();
     FragTrap& operator=(FragTrap const &ref);

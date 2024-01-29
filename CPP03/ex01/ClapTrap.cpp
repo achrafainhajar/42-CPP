@@ -6,12 +6,20 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:21:39 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:47:27 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/29 07:04:13 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+    std::cout<<"ClapTrap Default Constructor Called"<< std::endl;
+    this->name = "name";
+    Hit_point = 10;
+    Energy_point = 10;
+    Attack_damage = 0;
+}
 ClapTrap::ClapTrap(std::string name)
 {
     std::cout<<"ClapTrap Default Assigment Constructor Called"<< std::endl;
@@ -20,7 +28,6 @@ ClapTrap::ClapTrap(std::string name)
     Energy_point = 10;
     Attack_damage = 0;
 }
-ClapTrap::ClapTrap(){}
 ClapTrap& ClapTrap::operator=(ClapTrap const &ref)
 {
     std::cout<<"ClapTrap Copy assignment operator called"<< std::endl;
@@ -66,7 +73,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap "<<name<<" is Dead"<< std::endl;
         return;
     }
-    Hit_point = amount;
+    Hit_point = amount + Hit_point;
     std::cout << "ClapTrap " <<name << "reparing him self" << std::endl;
     Energy_point--;
 }

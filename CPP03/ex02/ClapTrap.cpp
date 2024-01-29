@@ -6,15 +6,18 @@
 /*   By: aainhaja <aainhaja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:28:08 by aainhaja          #+#    #+#             */
-/*   Updated: 2023/01/28 11:47:41 by aainhaja         ###   ########.fr       */
+/*   Updated: 2023/01/29 07:05:00 by aainhaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-{
-    
+ClapTrap::ClapTrap(){
+     std::cout<<"ClapTrap Default Constructor Called"<< std::endl;
+    this->name = "name";
+    Hit_point = 10;
+    Energy_point = 10;
+    Attack_damage = 0;
 }
 ClapTrap::ClapTrap(std::string name)
 {
@@ -69,7 +72,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap "<<name<<" is Dead"<< std::endl;
         return;
     }
-    Hit_point = amount;
+    Hit_point = amount + Hit_point;
     std::cout << "ClapTrap " <<name << "reparing him self" << std::endl;
     Energy_point--;
 }
